@@ -1,0 +1,309 @@
+html, body, * {
+	padding: 0;
+	margin: 0;
+	position: relative;
+}
+body {
+	background-color: #f5f4f3;
+	color: #5f584c;
+	font-size: 10px;
+	font-family: Verdana, Arial;
+}
+h1 {
+	font-weight: normal;
+	font-size: 21px;
+	margin: 0 0 35px 0;
+}
+p {
+	margin: 25px 0;
+	width: 400px;
+}
+a {
+	color: #fff;
+	text-decoration: underline;
+}
+img {
+	border: none;
+}
+#map_canvas {
+	width: 430px;
+	height: 450px;
+}
+#map_canvas h2 {
+	font-size: 12px;
+	margin: 0 0 2px 0;
+}
+#map_canvas span {
+}
+#wrapper {
+	position: relative;
+	background-image: url('images/background.jpg');
+	background-repeat: repeat-x;
+	min-height: 513px;
+	margin: 0 0 50px 0;
+}
+#inner-wrapper {
+	position: relative;
+	width: 619px;
+	margin: 0 auto;
+}
+#header {
+	position: relative;
+	height: 177px; 
+	background-image: url('images/head.jpg');
+	background-repeat: no-repeat;
+}
+
+#header ul.links {
+	list-style: none;
+	position: absolute;
+	right: 65px;
+	top: 29px;
+
+}
+#header .logo {
+	position: absolute;
+	width: 180px;
+	height: 82px;
+	left: 37px;
+	top: 70px;
+}
+#header ul.links a {
+	color: #5f584c;
+	text-decoration: none;
+}
+#header ul.links li {
+	float: left;
+	margin: 0 0 0 24px;
+}
+#navigation {
+	position: absolute;
+	width: 544px;
+	height: 25px;
+	top: 152px;
+	left: 37px;
+}
+#navigation a,
+#sub-navigation a,
+#footer a {
+	color: #5f584c;
+	text-decoration: none;
+}
+#navigation a:hover,
+#sub-navigation a:hover,
+#footer a:hover {
+	color: #fff;
+}
+#navigation ul {
+	list-style: none;
+	margin-left: 10px;
+}
+#navigation ul li {
+	float: left;
+	margin: 0 12px 0 0;
+	height: 17px;
+	padding: 7px 0 0 0;
+	color: #5f584c;
+}
+#navigation ul li:hover {
+	color: #ffffff;
+}
+#top-image {
+	height: 261px;
+}
+.container #top-image {
+	position: relative;
+	background-image: url('images/bbg.jpg');
+	overflow: hidden;
+}
+.container #top-image img {
+	position: absolute;
+	left: 37px;
+}
+#sub-navigation {
+	background-image: url('images/background-mid.jpg');
+	height: 97px;
+}
+#sub-navigation span {
+	position: absolute;
+	left: 38px;
+	top: 20px;
+	width: 543px;
+	text-align: center;
+}
+#sub-navigation ul {
+	position: absolute;
+	left: 100px;
+	top: 20px;
+	list-style: none;
+}
+.container.impress #sub-navigation ul,
+.container.contact #sub-navigation ul,
+.container.route #sub-navigation ul{
+	left: 193px;
+}
+#sub-navigation ul li {
+	float: left;
+	margin: 0 52px 0 0;
+}
+
+#content {
+	position: relative;
+	background-image: url('images/background_content.gif');
+	background-repeat: repeat-y;
+	background-position: right 3px;
+	color: #5f584c;
+	width: 582px;
+	padding: 7px 0 0 0;
+	overflow: hidden;
+}
+#content .inner {
+	width: 473px;
+	margin: 0 0 60px 62px;
+	padding: 0 0 0 46px;
+}
+#footer {
+	position: relative;
+	height: 50px;
+	width: 545px;
+	background-image: url('images/footer.jpg');
+	background-repeat: no-repeat;
+	margin: 0 0 0 37px;
+}
+#footer .links {
+	text-align: center;
+	position: absolute;
+	width: 545px;
+	top: 28px;
+}
+#footer .links span {
+	margin: 0 5px;
+}
+#footer .bottom {
+	position: absolute;
+	top: 60px;
+	width: 545px;
+	text-align: center;
+}
+#footer .bottom a:hover {
+	color: #5f584c;
+}
+.button {
+	width: 544px;
+	height: 25px;
+	margin: 0 0 2px 12px;
+}
+ul.history {
+	list-style: none;
+}
+ul.history li {
+	position: relative;
+	text-align: left;
+	margin: 0 0 4px 0;
+}
+ul.history li span {
+	float: left;
+	margin: 0 18px 0 0;
+}
+ul.image-container {
+	position: relative;
+	list-style: none;
+}
+ul.image-container li {
+	float: left;
+	margin: 0 30px 15px 0;
+}
+ul.references {
+	list-style: none;
+	height: 150px;
+}
+ul.references li {
+	float: left;
+	width: 190px;
+	margin: 0 0 4px 0;
+}
+ul.impress,
+ul.contact {
+	list-style: none;
+	margin: 20px 0 0 0;
+}
+ul.contact li,
+ul.impress li {
+	margin: 0 0 4px 0;
+}
+ul.impress li {
+	float: left;
+	width: 190px;
+}
+ul.buttons {
+	list-style: none;
+	margin: 0 0 60px 0;
+}
+ul.buttons li span {
+	position: absolute;
+	width: 494px;
+	height: 25px;
+	
+	left: 50px;
+}
+.container.impress p span {
+	margin: 5px 0;
+	display: block;
+}
+.container.impress p strong {
+	display: block;
+}
+.container.impress p.details {
+	margin: 80px 0 0 0;
+}
+.container.impress img.logo {
+	position: absolute;
+	left: 150px;
+	top: -6px;
+}
+.container.gallery #content .inner {
+    margin-bottom: 20px;
+}
+.button.index-one {
+	background-image: url('images/buttons/btt_objekteinrichtungen.jpg');
+}
+.button.index-one:hover {
+	background-image: url('images/buttons/btt_objekteinrichtungen_over.jpg');
+}
+.button.index-two {
+	background-image: url('images/buttons/btt_ladenbau.jpg');
+}
+.button.index-two:hover {
+	background-image: url('images/buttons/btt_ladenbau_over.jpg');
+}
+.button.index-three {
+	background-image: url('images/buttons/btt_inneneinrichtung.jpg');
+}
+.button.index-three:hover {
+	background-image: url('images/buttons/btt_inneneinrichtung_over.jpg');
+}
+.button.company-one {
+	background-image: url('images/buttons/btt_firmengeschichte.jpg');
+}
+.button.company-one:hover {
+	background-image: url('images/buttons/btt_firmengeschichte_over.jpg');
+}
+.button.company-two {
+	background-image: url('images/buttons/btt_planungberatung.jpg');
+}
+.button.company-two:hover {
+	background-image: url('images/buttons/btt_planungberatung_over.jpg');
+}
+.button.company-three {
+	background-image: url('images/buttons/btt_fertigung.jpg');
+}
+.button.company-three:hover {
+	background-image: url('images/buttons/btt_fertigung_over.jpg');
+}
+.button.company-four {
+	background-image: url('images/buttons/btt_service.jpg');
+}
+.button.company-four:hover {
+	background-image: url('images/buttons/btt_service_over.jpg');
+}
+
