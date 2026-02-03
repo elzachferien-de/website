@@ -5,12 +5,12 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="{#DESCRIPTION#}">
-    <meta name="keywords" content="{#KEYWORDS#}">
+    <meta name="description" content="{{ page.description }}">
+    <meta name="keywords" content="{{ page.keywords }}">
     <meta name="author" content="Juris Valins">
     <link rel="shortcut icon" href="ico/favicon.ico">
 
-    <title>{#TITLE#}</title>
+    <title>{{ page.title }}</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.css" rel="stylesheet">
@@ -22,19 +22,19 @@
     <link href="css/fw.css" rel="stylesheet">
 
 
-    
+
     <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
-    
+
     <script src="js/jquery.min.js"></script>
 	<script type="text/javascript" src="js/modernizr.custom.js"></script>
-    
+
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="js/html5shiv.js"></script>
       <script src="js/respond.min.js"></script>
     <![endif]-->
-    
+
     <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
     <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
     <script>
@@ -69,7 +69,7 @@
     document.cookie = disableStr + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC';
     path='/';
     window[disableStr] = true;
-    alert('Das Tracking durch Google Analytics wurde in Ihrem Browser für diese Website deaktiviert.');
+    alert('Das Tracking durch Google Analytics wurde in Ihrem Browser für diese Website deaktiviert.');
     } </script>
 
   <script>
@@ -82,13 +82,13 @@
   ga('create', 'UA-28962659-1', 'auto');
   ga('send', 'pageview');
 
-</script> 
+</script>
   </head>
 
   <body data-spy="scroll" data-offset="0" data-target="#navbar-main">
 
 
-  
+
   <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container">
     <!-- Titel und Schalter werden für bessere mobile Ansicht zusammengefasst -->
@@ -102,28 +102,28 @@
       <a class="navbar-brand" href="index.html">ELZACHFERIEN</a>
     </div>
 
-    <!-- Alle Navigationslinks, Formulare und anderer Inhalt werden hier zusammengefasst und k�n dann ein- und ausgeblendet werden -->
+    <!-- Alle Navigationslinks, Formulare und anderer Inhalt werden hier zusammengefasst und kön dann ein- und ausgeblendet werden -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li class="active"><a href="index.html">Home <span class="sr-only">(aktuell)</span></a></li>
-        
+
         <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Ferienwohnung<b class="caret"></b></a>
                   <ul class="dropdown-menu">
-                    
+
                     <li><a href="fw2.html">Wohnzimmer</a></li>
                     <li><a href="fw2.html#schlafen1">Schlafzimmer</a></li>
                     <li><a href="fw2.html#schlafen2">Schlafzimmer 2</a></li>
-                    <li><a href="fw2.html#kueche">K&uumlche</a></li> 
+                    <li><a href="fw2.html#kueche">K&uumlche</a></li>
                     <li><a href="fw2.html#bad">Badezimmer</a></li>
                     <li><a href="fw2.html#aussen">Aussenbereich</a></li>
                     <li><a href="fw2.html#belegung">Belegungsplan</a></li>
                     <li><a href="fw2.html#preise">Preise</a></li>
 
-                    
+
                   </ul>
-        </li>        	
-        		
+        </li>
+
 
         <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Unternehmungen<b class="caret"></b></a>
@@ -136,7 +136,7 @@
                   </ul>
         </li>
       </ul>
-      
+
       <ul class="nav navbar-nav navbar-right">
       <li class="dropdown">
           			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Information <span class="caret"></span></a>
@@ -153,24 +153,24 @@
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
- 
+
 </nav>
-    
+
     <div id="body">
-				{#CONTENT#}
+				{{ content }}
 		</div>
 
 
 		<div id="footerwrap">
 			<div class="container">
-				<h4>&copy;{#COPYRIGHT_YEAR#}<?php echo 2; ?> Elzachferien - <a href="mailto:info@elzachferien.de">info@elzachferien.de</a></h4>
+				<h4>&copy;{{ site.copyright_year_start }}-{{ 'now' | date: '%Y' }} Elzachferien - <a href="mailto:info@elzachferien.de">info@elzachferien.de</a></h4>
 			</div>
 		</div>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-		
+
 
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/retina.js"></script>

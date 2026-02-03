@@ -1,0 +1,15 @@
+# Jekyll Configuration for Elzachferien
+
+# Site settings
+title: Elzachferien - Ferien im Schwarzwald
+author: Juris Valins
+copyright_year_start: 2011
+
+# Exclude from processing
+exclude:
+  - templates/
+  - index.php
+  - README.md
+
+# Permalink structure (optional, for future blog posts)
+permalink: /:title.html
