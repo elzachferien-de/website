@@ -9,7 +9,28 @@ keywords: Valins, Konuskarte, Elzach, Ferien, Freiburg, Elzachferien, Ferienwohn
     <div class="jumbotron">
       <h3>Verkehrsanbindungen:</h3>
       <br><br>
-      <iframe width="600" height="500" src="https://maps.google.de/maps?hl=de&q=Wilhelmstr. 1d, 79098 Freiburg+(KVPC*SERVICE)&ie=UTF8&t=&z=17&iwloc=A&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+      <div id="map-anfahrt-wrapper" style="border:1px solid #ccc;padding:20px;background:#f5f5f5;max-width:620px;">
+        <p><strong>Datenschutzhinweis:</strong> Diese Karte wird von Google Maps (Google Ireland Limited) bereitgestellt. Durch Klick auf die Schaltfläche willigen Sie ein, dass Daten – darunter Ihre IP-Adresse – an Google übertragen werden. Weitere Informationen finden Sie in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
+        <button class="btn btn-primary" onclick="loadMap('map-anfahrt-wrapper','https://maps.google.de/maps?hl=de&amp;q=Wilhelmstr.+1d,+79098+Freiburg+(KVPC*SERVICE)&amp;ie=UTF8&amp;t=&amp;z=17&amp;iwloc=A&amp;output=embed','600','500')">Google Maps laden</button>
+      </div>
+      <script>
+        function loadMap(wrapperId, src, w, h) {
+          var wrapper = document.getElementById(wrapperId);
+          var iframe = document.createElement('iframe');
+          iframe.src = src;
+          iframe.width = w;
+          iframe.height = h;
+          iframe.frameBorder = '0';
+          iframe.scrolling = 'no';
+          iframe.marginHeight = '0';
+          iframe.marginWidth = '0';
+          wrapper.style.border = 'none';
+          wrapper.style.padding = '0';
+          wrapper.style.background = 'none';
+          wrapper.innerHTML = '';
+          wrapper.appendChild(iframe);
+        }
+      </script>
     </div>
   </div>
 </div>
