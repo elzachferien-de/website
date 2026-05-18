@@ -19,6 +19,62 @@ The legal notice (`impressum.html`) must also be reviewed for accuracy whenever 
 
 The site is operated from Germany and targets German visitors, so GDPR (DSGVO) and TMG/TTDSG obligations apply.
 
+## Third-Party Embeds: 2-Click Consent Solution
+
+All embedded third-party content that transmits personal data (IP address) on load **must use a 2-click consent placeholder**. The embed only loads after the user actively clicks a button. Legal basis: Art. 6(1)(a) DSGVO.
+
+### Currently implemented
+
+| Service | Pages | Consent basis |
+|---|---|---|
+| Google Maps | `kontakt.html`, `anfahrt.html` | Art. 6(1)(a) — active click required |
+| komoot | `mountainbike.html`, `wanderungen.html`, `gasthof_lieberatsberg.html` | Art. 6(1)(a) — active click required |
+
+### Adding a new third-party embed — checklist
+
+1. **Never embed a raw `<iframe>` or `<script>` from a third party directly.** Always wrap it in a consent placeholder (see template below).
+2. Add a new section to `datenschutz.html`: provider name, purpose, legal basis (lit. a), withdrawal notice, link to provider's privacy policy.
+3. Mention the service in the **Cookies section** (§10) if it sets cookies.
+4. Use the appropriate placeholder style — match the provider's brand colours so users recognise what they are activating.
+
+### Placeholder template
+
+```html
+<div id="UNIQUE_ID" style="position:relative;width:WIDTHpx;max-width:100%;height:HEIGHTpx;
+  background:#f0f0f0;border:1px solid #ccc;border-radius:4px;overflow:hidden;
+  display:flex;align-items:center;justify-content:center;font-family:Arial,sans-serif;">
+  <!-- Optional: SVG background suggesting the content type -->
+  <div style="position:relative;z-index:1;text-align:center;background:rgba(255,255,255,0.92);
+    padding:24px 32px;border-radius:6px;max-width:380px;box-shadow:0 2px 12px rgba(0,0,0,0.12);">
+    <div style="font-size:18px;font-weight:700;color:#333;margin-bottom:8px;">PROVIDER NAME</div>
+    <div style="font-size:13px;color:#777;margin-bottom:14px;">Inhalt noch nicht geladen</div>
+    <p style="font-size:12px;color:#555;line-height:1.5;margin:0 0 16px;">
+      Durch das Laden werden Daten (inkl. IP-Adresse) an PROVIDER übertragen.
+      Mehr dazu in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.
+    </p>
+    <button onclick="loadEmbed('UNIQUE_ID','EMBED_URL','WIDTH','HEIGHT')"
+      style="background:#BRAND_COLOR;border:none;color:#fff;padding:10px 24px;
+      font-size:14px;font-weight:600;border-radius:4px;cursor:pointer;">
+      Inhalt laden
+    </button>
+  </div>
+</div>
+<script>
+  function loadEmbed(wrapperId, src, w, h) {
+    var wrapper = document.getElementById(wrapperId);
+    var iframe = document.createElement('iframe');
+    iframe.src = src; iframe.width = w; iframe.height = h;
+    iframe.frameBorder = '0';
+    wrapper.style.cssText = '';
+    wrapper.innerHTML = '';
+    wrapper.appendChild(iframe);
+  }
+</script>
+```
+
+Each page that uses embeds defines its own `loadKomoot` / `loadMap` function at the bottom — no shared script file, intentionally simple.
+
+
 ## Project Overview
 
 `elzachferien.de` is a small, static marketing website for a vacation rental ("Ferienwohnung") in Elzach in the Black Forest, Germany. The site presents the apartment, the surrounding area, leisure activities, and contact information for prospective guests.
@@ -38,7 +94,7 @@ The repository was migrated from a PHP-based router to a static Jekyll site; see
 - **IcoMoon** icon font and custom web fonts (locally hosted)
 - Plain HTML / CSS / JavaScript — no build step, no package manager
 
-All assets are served locally from this repository; there are currently no external CDNs, trackers, or analytics integrated. Keep it that way unless explicitly requested — and if it changes, see the privacy policy section above.
+All fonts and first-party assets are served locally. Third-party services (Google Maps, komoot) are integrated but only activated by explicit user consent via the 2-click solution described above. Keep it that way unless explicitly requested — and if it changes, see the privacy policy section above.
 
 ## Repository Layout
 
@@ -59,10 +115,12 @@ All assets are served locally from this repository; there are currently no exter
 
 - `index.html` — landing page
 - `fw2.html` — apartment details (rooms, availability, prices)
-- `kontakt.html`, `anfahrt.html` — contact and directions
+- `kontakt.html`, `anfahrt.html` — contact and directions (Google Maps, 2-click consent)
 - `impressum.html`, `datenschutz.html` — legal notice and privacy policy
 - `mountainbike.html`, `mtb.html`, `wanderungen.html`, `ausflug.html`, `fastnacht.html`, `konus.html`, `umgebung.html`, `rundweg_prechtal.html` — activities and local information
 - `gasthof_lieberatsberg.html`, `gast.html`, `fahrradverleih.html`, `beurteilung.html`, `link.html` — related information and partners
+
+Note: `mountainbike.html`, `wanderungen.html`, and `gasthof_lieberatsberg.html` contain komoot tour embeds (2-click consent).
 
 ## Conventions
 
@@ -94,7 +152,7 @@ Deployment is automatic: pushing to `main` triggers a GitHub Pages build. There 
 
 ## Things to Avoid
 
-- Do **not** add Google Analytics, Tag Manager, Facebook Pixel, or similar trackers without an explicit request — they would require privacy-policy and (likely) consent-banner changes.
-- Do **not** load fonts, scripts, or images from third-party CDNs without checking the privacy implications first.
+- Do **not** add Google Analytics, Tag Manager, Facebook Pixel, or similar trackers without an explicit request — they would require privacy-policy and consent-banner changes.
+- Do **not** load fonts, scripts, or images from third-party CDNs without checking the privacy implications first. If you do add a third-party embed, use the 2-click consent solution described above.
 - Do **not** commit secrets or personal data; this repository is public.
 - Do **not** rename or remove `CNAME` unless the custom domain is intentionally changing.
