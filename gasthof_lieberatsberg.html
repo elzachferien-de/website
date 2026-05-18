@@ -9,7 +9,35 @@ keywords: Valins, Konuskarte, Elzach, Ferien, Freiburg, Elzachferien, Ferienwohn
     <h1>Zum Gasthof Liebratshofen</h1>
     <br>
     <div class="row">
-      <iframe src="https://www.komoot.de/tour/6903162/embed" width="640" height="440" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+      <div id="komoot-gasthof-1" style="position:relative;width:640px;max-width:100%;height:440px;background:#eef2ee;border:1px solid #c8d8c8;border-radius:4px;overflow:hidden;display:flex;align-items:center;justify-content:center;font-family:Arial,sans-serif;">
+        <svg style="position:absolute;top:0;left:0;width:100%;height:100%;opacity:0.13;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 440" preserveAspectRatio="xMidYMid slice">
+          <path d="M0,240 Q160,130 320,190 Q480,250 640,150" stroke="#4a7a4a" stroke-width="1.5" fill="none"/>
+          <path d="M0,280 Q160,170 320,230 Q480,290 640,190" stroke="#4a7a4a" stroke-width="1.5" fill="none"/>
+          <path d="M0,320 Q160,210 320,270 Q480,330 640,230" stroke="#4a7a4a" stroke-width="1.5" fill="none"/>
+          <path d="M0,360 Q160,250 320,310 Q480,370 640,270" stroke="#4a7a4a" stroke-width="1.5" fill="none"/>
+          <path d="M50,340 Q170,270 290,215 Q410,160 510,170 Q580,176 610,160" stroke="#6AD07B" stroke-width="3" fill="none" stroke-dasharray="8,5"/>
+          <circle cx="50" cy="340" r="7" fill="#6AD07B"/>
+          <circle cx="610" cy="160" r="7" fill="#ff6b35"/>
+        </svg>
+        <div style="position:relative;z-index:1;text-align:center;background:rgba(255,255,255,0.90);padding:24px 32px;border-radius:6px;max-width:360px;box-shadow:0 2px 12px rgba(0,0,0,0.12);">
+          <div style="font-size:22px;font-weight:700;color:#313131;letter-spacing:-0.5px;margin-bottom:4px;">komoot</div>
+          <div style="font-size:13px;color:#777;margin-bottom:14px;">Tour-Widget (noch nicht geladen)</div>
+          <p style="font-size:12px;color:#555;line-height:1.5;margin:0 0 16px;">Durch das Laden der Tour werden Daten (inkl. IP-Adresse) an komoot GmbH übertragen. Mehr dazu in unserer <a href="datenschutz.html" style="color:#4aaa5a;">Datenschutzerklärung</a>.</p>
+          <button onclick="loadKomoot('komoot-gasthof-1','https://www.komoot.de/tour/6903162/embed','640','440')" style="background:#6AD07B;border:none;color:#fff;padding:10px 24px;font-size:14px;font-weight:600;border-radius:4px;cursor:pointer;">Tour laden</button>
+        </div>
+      </div>
     </div>
   </div>
 </div>
+<script>
+  function loadKomoot(wrapperId, src, w, h) {
+    var wrapper = document.getElementById(wrapperId);
+    var iframe = document.createElement('iframe');
+    iframe.src = src; iframe.width = w; iframe.height = h;
+    iframe.frameBorder = '0'; iframe.scrolling = 'no';
+    iframe.marginHeight = '0'; iframe.marginWidth = '0';
+    wrapper.style.cssText = '';
+    wrapper.innerHTML = '';
+    wrapper.appendChild(iframe);
+  }
+</script>
