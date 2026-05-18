@@ -29,7 +29,7 @@ All embedded third-party content that transmits personal data (IP address) on lo
 |---|---|---|
 | Google Maps | `kontakt.html`, `anfahrt.html` | Art. 6(1)(a) — active click required |
 | komoot | `mountainbike.html`, `wanderungen.html`, `gasthof_lieberatsberg.html` | Art. 6(1)(a) — active click required |
-| fewokalender.com | `fw2.html` | Art. 6(1)(a) — active click required |
+| fewokalender.com | `fw2.html` | Art. 6(1)(f) — direct embed (legitimate interest) |
 
 ### Adding a new third-party embed — checklist
 
