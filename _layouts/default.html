@@ -18,9 +18,7 @@
     <link href="css/icomoon.css" rel="stylesheet">
     <link href="css/animate-custom.css" rel="stylesheet">
     <link href="css/fw.css" rel="stylesheet">
-
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,700" rel="stylesheet">
+    <link href="css/fonts.css" rel="stylesheet">
 
     <script src="js/jquery.min.js"></script>
     <script src="js/modernizr.custom.js"></script>
@@ -30,60 +28,6 @@
       <script src="js/html5shiv.js"></script>
       <script src="js/respond.min.js"></script>
     <![endif]-->
-
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css">
-    <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
-    <script>
-      window.addEventListener("load", function () {
-        window.cookieconsent.initialise({
-          palette: {
-            popup: {
-              background: "rgba(0, 0, 0, 0.7)",
-              text: "#FFF"
-            },
-            button: {
-              background: "#f1d600"
-            }
-          },
-          theme: "classic",
-          content: {
-            message: "Durch die Benutzung der Webseite erklärst Du Dich mit der Verwendung unserer Cookies einverstanden",
-            dismiss: "Zustimmen",
-            link: "Mehr erfahren",
-            href: "/datenschutz.html"
-          }
-        });
-      });
-    </script>
-
-    <script>
-      var gaProperty = "UA-28962659-1";
-      var disableStr = "ga-disable-" + gaProperty;
-      if (document.cookie.indexOf(disableStr + "=true") > -1) {
-        window[disableStr] = true;
-      }
-      function gaOptout() {
-        document.cookie = disableStr + "=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/";
-        window[disableStr] = true;
-        alert("Das Tracking durch Google Analytics wurde in Ihrem Browser für diese Website deaktiviert.");
-      }
-    </script>
-
-    <script>
-      (function (i, s, o, g, r, a, m) {
-        i["GoogleAnalyticsObject"] = r;
-        i[r] = i[r] || function () { (i[r].q = i[r].q || []).push(arguments); };
-        i[r].l = 1 * new Date();
-        a = s.createElement(o);
-        m = s.getElementsByTagName(o)[0];
-        a.async = 1;
-        a.src = g;
-        m.parentNode.insertBefore(a, m);
-      })(window, document, "script", "//www.google-analytics.com/analytics.js", "ga");
-
-      ga("create", "UA-28962659-1", "auto");
-      ga("send", "pageview");
-    </script>
   </head>
 
   <body data-spy="scroll" data-offset="0" data-target="#navbar-main">
